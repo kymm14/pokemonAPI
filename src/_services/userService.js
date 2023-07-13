@@ -34,6 +34,21 @@ userService.getPokemonDetail = async (id) => {
   return response.data;
 };
 
+userService.getImage = async (id) => {
+  const options = {
+    method: "GET",
+    url: `${global.BASE_API_URL_IMAGES}/${id}.svg`,
+    params: { image },
+    headers: {
+      accept: "application/json",
+    },
+  };
+  await sleep(2000); // TODO
+  const response = await axios.request(options);
+
+  return response.data;
+};
+
 userService.getFood = async (id) => {
   const options = {
     method: "GET",

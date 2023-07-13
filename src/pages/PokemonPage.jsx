@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import userService from "../_services/userService";
 import { Box, Container, Pagination, Typography } from "@mui/material";
+import PokemonDetail from "./PokemonDetail";
+import PokemonCard from "./PokemonCard";
 
 export default function PokemonPage() {
   const initialPokemons = [];
@@ -40,7 +42,7 @@ export default function PokemonPage() {
         </Box>
         <Box className='pokemon-list-wrapper'>
           {pokemons.map((pokemon) => (
-            <MovieCard key={pokemon.id} pokemon={pokemon.name} />
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}
         </Box>
       </Container>
